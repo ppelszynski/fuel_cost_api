@@ -62,7 +62,7 @@ jobs: # a collection of steps
                               $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
       - run:
           name: Heroku
-          command: git push heroku master
+          command: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
       # Save test results for timing analysis
       - store_test_results: # Upload test results for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
           path: test_results
