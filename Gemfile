@@ -16,7 +16,6 @@ gem 'puma', '~> 3.11'
 gem "rails-patterns"
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'factory_bot'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -27,6 +26,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # gem 'rack-cors'
 
 group :development, :test do
+  gem 'factory_bot'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.8'
   gem 'rspec_junit_formatter'
