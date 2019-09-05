@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'POST /login', type: :request do
   context 'when params are correct' do
     it 'returns 200' do
-      user = User.create!(email: 'user@example.com', password: 'password')
+      user = create(:user, email: 'user@example.com', password: 'password')
       params = { user: { email: 'user@example.com', password: 'password' }}
 
       post '/login', params: params
@@ -11,8 +11,8 @@ RSpec.describe 'POST /login', type: :request do
       expect(response).to have_http_status(200)
     end
 
-    it 'returns JTW token in authorization header' do
-      user = User.create!(email: 'user@example.com', password: 'password')
+    it 'returns JWT token in authorization header' do
+      user = create(:user, email: 'user@example.com', password: 'password')
       params = { user: { email: 'user@example.com', password: 'password' }}
 
       post '/login', params: params
@@ -21,7 +21,7 @@ RSpec.describe 'POST /login', type: :request do
     end
 
     it 'returns valid JWT token' do
-      user = User.create!(email: 'user@example.com', password: 'password')
+      user = create(:user, email: 'user@example.com', password: 'password')
       params = { user: { email: 'user@example.com', password: 'password' }}
 
       post '/login', params: params
@@ -32,8 +32,8 @@ RSpec.describe 'POST /login', type: :request do
 
   context 'when login params are incorrect' do
     it 'returns unathorized status' do
-      post '/login' 
-      
+      post '/login'
+
       expect(response.status).to eq 401
     end
   end
