@@ -32,6 +32,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'database_cleaner'
   gem 'factory_bot'
   gem 'rspec-rails', '~> 3.8'
   gem 'rspec_junit_formatter'
