@@ -22,6 +22,7 @@ gem 'devise-jwt'
 # gem 'image_processing', '~> 1.2'
 gem 'dotenv-rails', groups: [:development, :test]
 
+gem 'jsonapi-resources'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -36,7 +37,7 @@ end
 
 group :test do
   gem 'database_cleaner'
-  gem 'factory_bot'
+  gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 3.8'
   gem 'rspec_junit_formatter'
 end
