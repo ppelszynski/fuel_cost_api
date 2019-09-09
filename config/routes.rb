@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     post "/sign_up" => "registrations#create"
   end
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  jsonapi_resources :pb95s
+  jsonapi_resources :diesels
 end

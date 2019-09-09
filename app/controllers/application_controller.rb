@@ -1,4 +1,4 @@
-class ApplicationController < ActionController::API
+class ApplicationController < ActionController::API 
   def render_resource(resource)
     if resource.errors.empty?
       render json: resource
