@@ -1,6 +1,4 @@
-class ApplicationController < JSONAPI::ResourceController
-  protect_from_forgery with: :null_session
-  
+class ApplicationController < ActionController::API 
   def render_resource(resource)
     if resource.errors.empty?
       render json: resource

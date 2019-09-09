@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   end
 
   jsonapi_resources :pb95s
+  jsonapi_resources :diesels
 end

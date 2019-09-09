@@ -1,3 +1,3 @@
 class Pb95Resource < JSONAPI::Resource
-  attributes :price, :diff
+  attributes :price, :diffrence
 end

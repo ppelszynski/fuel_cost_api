@@ -1,0 +1,2 @@
+class Diesel < ApplicationRecord
+end

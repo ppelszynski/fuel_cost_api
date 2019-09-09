@@ -39,8 +39,10 @@ RSpec.describe 'POST /sign_up', type: :request do
       params = { user: { email: 'user@example.com', password: 'password' } }
 
       post '/sign_up', params: params
+
+      parsed_response = JSON.parse(response.body)
       
-      expect(json['errors'].first['title']).to eq('Bad Request')
+      expect(parsed_response['errors'].first['title']).to eq('Bad Request')
     end
   end
 end
